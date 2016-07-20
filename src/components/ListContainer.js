@@ -15,12 +15,18 @@ export default class ListContainer extends Component{
     };
   }
 
+  /**
+   * Pick a random index and set state which triggers a render
+   */
   mixup() {
     const rand = Math.floor(Math.random() *3);
     this.setState({index: rand});
-    console.log(this.state.index);
   }
 
+  /**
+   * Render the list each time the button is clicked and the  current index changes
+   * Pass in the current list as a prop to the simpler List component
+   */
   render() {
     const curList = this.state.lists[this.state.index];
     return(
