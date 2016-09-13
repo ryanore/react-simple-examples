@@ -1,7 +1,6 @@
-React Boilerplate
-=====================
+# React Boilerplate
 
-A minimal and light dev environment for ReactJS.
+## A minimal and light dev environment for ReactJS.
 
 ### Usage
 
@@ -18,3 +17,5 @@ This boilerplate project includes React ESLint configuration.
 ```
 npm test
 ```
+
+See [REACT_PRIMER.md for info on ]('./REACT_PRIMER.md')

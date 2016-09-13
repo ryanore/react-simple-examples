@@ -1,7 +1,10 @@
-
+/**
+ * IN THIS FILE:
+ * - Using internal state and re-rendering each time count state changes
+ */
 import React, { Component } from 'react';
 
-export default class Button extends Component {
+export default class CountButton extends Component {
 
   constructor(props) {
     super()
@@ -16,7 +19,9 @@ export default class Button extends Component {
 
   render() {
     return (
-      <button onClick={this.onClickButton}>Clicked {this.state.count}</button>
+      <div className="component">
+        <button onClick={this.onClickButton}>Clicked {this.state.count}</button>
+      </div>
     );
   };
 

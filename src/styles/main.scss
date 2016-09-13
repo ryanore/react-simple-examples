@@ -5,3 +5,25 @@ body{
   background: #fafafa;
   color: #222;
 }
+.main{
+  padding: 1em;
+  border: 1px solid transparent;
+}
+.component-container{
+  margin: 1em 0;
+  padding: 2em 0;
+  border-top: 1px solid #ccc;
+}
+
+.component{
+  border: 1px dashed #ccc;
+  padding: 1em;
+  position: relative;
+}
+
+.lifecycle-reporter {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  max-width: 200px;
+}

@@ -1,5 +1,10 @@
+/**
+ * IN THIS FILE:
+ * - importing css as a module.
+ * - using state internally and re-rendering each time toggled state changes.
+ */
 import React, {Component} from 'react';
-
+import css from '../styles/components/_toggle.scss';
 export default class Toggle extends Component{
 
   constructor(props) {
@@ -9,14 +14,13 @@ export default class Toggle extends Component{
   }
 
   onToggle() {
-    let toggled = !this.state.toggled;
-    this.setState({toggled:toggled});
+    this.setState({toggled:!this.state.toggled});
   }
 
   render() {
     return(
-      <div>
-        <p>Toggled: {this.state.toggled.toString()}</p>
+      <div className="toggle component">
+        <p>State Toggled = {this.state.toggled.toString()}</p>
         <button onClick={this.onToggle}>Toggle Me</button>
       </div>
     );
