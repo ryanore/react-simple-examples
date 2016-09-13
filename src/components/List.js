@@ -5,11 +5,13 @@ export default class List extends Component{
   render() {
     const results = this.props.list;
     return(
-      <ol>
-        {results.map(function(result) {
-          return <li key={result.id}>{result.text}</li>;
-        })}
-      </ol>
+      <div className="component">
+        <ol>
+          {results.map(function(result) {
+            return <li key={result.id}>{result.text}</li>;
+          })}
+        </ol>
+      </div>
     )
   }
 }

@@ -1,3 +1,10 @@
+/**
+ * IN THIS FILE:
+ * 	- Composing with this.children, and by passing in a list component
+ *
+ *  - HOW COULD WE REFACTOR THIS????
+ */
+
 import React, {Component} from 'react';
 import List from './List';
 
@@ -7,19 +14,15 @@ export default class ListContainer extends Component{
     super();
     this.state = {
       index: 0,
-      lists: [
-        [{id: 's1', text: 'Bart'},{id: 's2', text: 'Lisa'},{id: 's3', text: 'Marge'},{id: 's4', text: 'Homer'}],
-        [{id: 'g1', text: 'Chris'},{id: 'g2', text: 'Meg'},{id: 'g3', text: 'Stewie'},{id: 'g4', text: 'Lois'},{id: 'g5', text: 'Peter'}],
-        [{id: 'f1', text: 'Pebbles'},{id: 'f2', text: 'Fred'},{id: 'f3', text: 'Wilma'}]
-      ]
+      lists: props.data
     };
   }
 
   /**
-   * Pick a random index and set state which triggers a render
+   * Setting state triggers a render
    */
   mixup() {
-    const rand = Math.floor(Math.random() *3);
+    let rand = Math.floor(Math.random() * this.state.lists.length);
     this.setState({index: rand});
   }
 
@@ -30,9 +33,10 @@ export default class ListContainer extends Component{
   render() {
     const curList = this.state.lists[this.state.index];
     return(
-      <div>
+      <div className="component">
         <button onClick={this.mixup.bind(this)}>Mix It Up!</button>
         <List list={curList} />
+        {this.props.children}
       </div>
     );
   }
